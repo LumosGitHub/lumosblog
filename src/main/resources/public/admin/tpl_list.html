@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>编辑模板 - Lumos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="biezhi" name="author"/>
+    <meta content="JDJhJDEyJHpYNUY0a3dJb1lSeDk3cVJIREVCa3VNM3c0T04xcWdHWVhJOFRRWHd2cHh0Sk9pRVVlVFE2" name="csrf_token"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="shortcut icon" href="/r/images/favicon.png"/>
+    <link href="/r/plugins/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/r/plugins/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/r/plugins/limonte-sweetalert2/6.4.1/sweetalert2.min.css" rel="stylesheet">
+    <link href="/r/plugins/vue-loading/vue-loading.min.css" rel="stylesheet">
+    <link href="/r/css/style.min.css?v=v1.0" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="/r/plugins/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="/r/plugins/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="fixed-left">
+<div id="wrapper">
+    <div class="topbar">
+        <div class="topbar-left">
+            <div class="text-center p-t-10" style="margin: 0 auto;">
+                <div class="pull-left" style="padding-left: 10px;">
+                    <a href="/admin/index">
+                        <img src="/r/images/unicorn.png" width="50" height="50"/>
+                    </a>
+                </div>
+                <div class="pull-left admin-title" style="padding-left: 10px;">
+                    <span style="font-size: 28px; color: #2f353f; line-height: 50px;">Lumos Blog</span>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="">
+                    <div class="pull-left">
+                        <button type="button" class="button-menu-mobile open-left">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <span class="clearfix"></span>
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right pull-right">
+                        <li class="dropdown">
+                            <a href="index.html" class="dropdown-toggle profile" data-toggle="dropdown"
+                               aria-expanded="true"><img src="https://cn.gravatar.com/avatar" alt="user-img"
+                                                         class="img-circle"> </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://127.0.0.1:9000" target="_blank"><i class="fa fa-eye"
+                                                                                       aria-hidden="true"></i> 预览站点</a>
+                                </li>
+                                <li><a href="/admin/profile"><i class="fa fa-sun-o"></i> 个人设置</a></li>
+                                <li><a href="/logout"><i class="fa fa-sign-out"></i> 注销</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left side-menu">
+        <div class="sidebar-inner slimscrollleft">
+            <div id="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="/admin/index" class="waves-effect "><i class="fa fa-dashboard"
+                                                                        aria-hidden="true"></i><span> 仪表盘 </span></a>
+                    </li>
+                    <li>
+                        <a href="/admin/article/new" class="waves-effect "><i class="fa fa-pencil-square-o"
+                                                                              aria-hidden="true"></i><span> 发布文章 </span></a>
+                    </li>
+                    <li>
+                        <a href="/admin/articles" class="waves-effect "><i class="fa fa-list"
+                                                                           aria-hidden="true"></i><span> 文章管理 </span></a>
+                    </li>
+
+                    <li>
+                        <a href="/admin/pages" class="waves-effect "><i class="fa fa-file-text"
+                                                                        aria-hidden="true"></i><span> 页面管理 </span></a>
+                    </li>
+
+                    <li>
+                        <a href="/admin/attaches" class="waves-effect "><i class="fa fa-cloud-upload"
+                                                                           aria-hidden="true"></i><span> 文件管理 </span></a>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0)" class="waves-effect  active subdrop "><i
+                                class="fa fa-cubes"></i><span> 其他管理 </span><span class="pull-right"><i
+                                class="fa fa-plus"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="/admin/comments" class="waves-effect "><i class="fa fa-comments"
+                                                                                   aria-hidden="true"></i><span> 评论管理 </span></a>
+                            </li>
+                            <li>
+                                <a href="/admin/categories" class="waves-effect "><i class="fa fa-tags"
+                                                                                     aria-hidden="true"></i><span> 分类/标签 </span></a>
+                            </li>
+                            <li class="active">
+                                <a href="/admin/template" class="waves-effect  active "><i
+                                        class="fa fa-hashtag"></i><span> 编辑模板 </span></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="/admin/themes" class="waves-effect "><i class="fa fa-diamond"
+                                                                         aria-hidden="true"></i><span> 主题设置 </span></a>
+                    </li>
+
+                    <li>
+                        <a href="/admin/setting" class="waves-effect "><i class="fa fa-gear"
+                                                                          aria-hidden="true"></i><span> 系统设置 </span></a>
+                    </li>
+
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="content-page">
+        <div class="content">
+            <div class="container">
+                <div id="app" class="row" v-cloak>
+                    <loading :active.sync="isLoading" :can-cancel="true"></loading>
+                    <div class="col-lg-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">编辑模板</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <select id="tplSelect" onchange="showContent(this)">
+                                        <option selected value="">请选择模板文件</option>
+                                        <option value="archives.html">archives.html</option>
+                                        <option value="index.html">index.html</option>
+                                        <option value="page-category.html">page-category.html</option>
+                                        <option value="page.html">page.html</option>
+                                        <option value="post.html">post.html</option>
+                                        <option value="setting.html">setting.html</option>
+                                        <option value="partial/comments.html">partial/comments.html</option>
+                                        <option value="partial/footer.html">partial/footer.html</option>
+                                        <option value="partial/header.html">partial/header.html</option>
+                                        <option value="partial/social.html">partial/social.html</option>
+                                    </select>
+
+                                    <button class="btn btn-primary waves-effect waves-light m-b-5" onclick="saveTpl()">
+                                        保存修改
+                                    </button>
+
+                                    <div>
+                                        <textarea id="tpl-preview" rows="20" cols="100%"
+                                                  placeholder="选择模板后进行修改"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="footer text-right">
+                    2017 © <a href="https://github.com/biezhi" target="_blank">Tale</a>.
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/r/plugins/jquery/3.2.1/jquery.min.js"></script>
+<script src="/r/plugins/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/r/plugins/md5/md5.min.js"></script>
+<script src="/r/plugins/dashborad/detect.js"></script>
+<script src="/r/plugins/dashborad/fastclick.js"></script>
+<script src="/r/plugins/dashborad/wow.min.js"></script>
+<script src="/r/plugins/dashborad/jquery.slimscroll.js"></script>
+<script src="/r/plugins/limonte-sweetalert2/6.4.1/sweetalert2.min.js"></script>
+<script src="/r/plugins/axios/axios.min.js"></script>
+<script src="/r/plugins/vue/vue.min.js"></script>
+<script src="/r/plugins/moment/moment.min.js"></script>
+<script src="/r/plugins/vue-loading/vue-loading.min.js"></script>
+<script src="/r/plugins/dashborad/jquery.app.js?v=v1.0"></script>
+<script src="/r/js/base.js?v=v1.0"></script>
+
+<script>
+    var tale = new $.tale();
+
+    var tale = new $.tale();
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            articlePage: {},
+            isLoading: true
+        },
+        beforeCreate: function () {
+            vueLoding = this.$loading.show();
+        },
+        mounted: function () {
+            this.load();
+        },
+        methods: {
+            load: function () {
+                var $vm = this;
+                tale.get({
+                    url: '/admin/api/articles',
+                    success: function (data) {
+                        $vm.articlePage = data.payload
+                    },
+                    error: function (error) {
+                        console.log(error);
+                        alert(error || '数据加载失败');
+                    }
+                });
+            }
+        }
+    });
+
+    $(document).ready(function () {
+        vm.isLoading = false;
+        vueLoding.hide();
+    });
+
+    function showContent(obj) {
+        var fileName = obj.value;
+        if (fileName && fileName != '') {
+            $.get('/admin/template/content', {fileName: fileName}, function (data) {
+                $('#tpl-preview').val(data);
+            });
+        } else {
+            $('#tpl-preview').val('');
+        }
+    }
+
+    function saveTpl() {
+        var fileName = $('#tplSelect').val();
+        if (fileName && fileName != '') {
+            tale.post({
+                url: '/admin/api/template/save',
+                data: {
+                    fileName: fileName,
+                    content: $('#tpl-preview').val()
+                },
+                success: function (result) {
+                    if (result && result.success) {
+                        tale.alertOk('模板保存成功');
+                    } else {
+                        tale.alertError(result.msg || '模板保存失败');
+                    }
+                }
+            });
+        }
+    }
+</script>
+</body>
+</html>

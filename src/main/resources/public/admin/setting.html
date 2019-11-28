@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>系统设置 - Lumos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="biezhi" name="author"/>
+    <meta content="JDJhJDEyJGtqcEptdUU5ZFhKaUtPSElBTVlucS5DTzR5Nmh5WnFSeVVQWkJ2MGMualdwRUkwMERNWmR5" name="csrf_token"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="shortcut icon" href="/r/images/favicon.png"/>
+    <link href="/r/plugins/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/r/plugins/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/r/plugins/limonte-sweetalert2/6.4.1/sweetalert2.min.css" rel="stylesheet">
+    <link href="/r/plugins/vue-loading/vue-loading.min.css" rel="stylesheet">
+    <link href="/r/css/style.min.css?v=v1.0" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="/r/plugins/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="/r/plugins/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="fixed-left">
+<div id="wrapper">
+    <div class="topbar">
+        <div class="topbar-left">
+            <div class="text-center p-t-10" style="margin: 0 auto;">
+                <div class="pull-left" style="padding-left: 10px;">
+                    <a href="/admin/index">
+                        <img src="/r/images/unicorn.png" width="50" height="50"/>
+                    </a>
+                </div>
+                <div class="pull-left admin-title" style="padding-left: 10px;">
+                    <span style="font-size: 28px; color: #2f353f; line-height: 50px;">Lumos Blog</span>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="">
+                    <div class="pull-left">
+                        <button type="button" class="button-menu-mobile open-left">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <span class="clearfix"></span>
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right pull-right">
+                        <li class="dropdown">
+                            <a href="index.html" class="dropdown-toggle profile" data-toggle="dropdown"
+                               aria-expanded="true"><img src="https://cn.gravatar.com/avatar" alt="user-img"
+                                                         class="img-circle"> </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/" target="_blank"><i class="fa fa-eye" aria-hidden="true"></i> 预览站点</a>
+                                </li>
+                                <li><a href="/admin/profile"><i class="fa fa-sun-o"></i> 个人设置</a></li>
+                                <li><a href="/logout"><i class="fa fa-sign-out"></i> 注销</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left side-menu">
+        <div class="sidebar-inner slimscrollleft">
+            <div id="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="/admin/index" class="waves-effect "><i class="fa fa-dashboard"
+                                                                        aria-hidden="true"></i><span> 仪表盘 </span></a>
+                    </li>
+                    <li>
+                        <a href="/admin/article/new" class="waves-effect "><i class="fa fa-pencil-square-o"
+                                                                              aria-hidden="true"></i><span> 发布文章 </span></a>
+                    </li>
+                    <li>
+                        <a href="/admin/articles" class="waves-effect "><i class="fa fa-list"
+                                                                           aria-hidden="true"></i><span> 文章管理 </span></a>
+                    </li>
+
+                    <li>
+                        <a href="/admin/pages" class="waves-effect "><i class="fa fa-file-text"
+                                                                        aria-hidden="true"></i><span> 页面管理 </span></a>
+                    </li>
+
+                    <li>
+                        <a href="/admin/attaches" class="waves-effect "><i class="fa fa-cloud-upload"
+                                                                           aria-hidden="true"></i><span> 文件管理 </span></a>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0)" class="waves-effect "><i
+                                class="fa fa-cubes"></i><span> 其他管理 </span><span class="pull-right"><i
+                                class="fa fa-plus"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="/admin/comments" class="waves-effect "><i class="fa fa-comments"
+                                                                                   aria-hidden="true"></i><span> 评论管理 </span></a>
+                            </li>
+                            <li>
+                                <a href="/admin/categories" class="waves-effect "><i class="fa fa-tags"
+                                                                                     aria-hidden="true"></i><span> 分类/标签 </span></a>
+                            </li>
+                            <li>
+                                <a href="/admin/template" class="waves-effect "><i
+                                        class="fa fa-hashtag"></i><span> 编辑模板 </span></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="/admin/themes" class="waves-effect "><i class="fa fa-diamond"
+                                                                         aria-hidden="true"></i><span> 主题设置 </span></a>
+                    </li>
+
+                    <li class="active">
+                        <a href="/admin/setting" class="waves-effect  active "><i class="fa fa-gear"
+                                                                                  aria-hidden="true"></i><span> 系统设置 </span></a>
+                    </li>
+
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="content-page">
+        <div class="content">
+            <div class="container">
+                <link href="/r/plugins/toggles/toggles.css" rel="stylesheet">
+
+                <div id="app" class="row" v-cloak>
+                    <loading :active.sync="isLoading" :can-cancel="true"></loading>
+                    <div class="col-lg-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">系统设置</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="panel panel-color panel-inverse">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">站点设置</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <form class="form-horizontal" role="form" id="global-form">
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label">网站地址</label>
+                                                        <div class="col-md-9">
+                                                            <input type="text" v-model="options.site_url"
+                                                                   class="form-control" placeholder="网站地址" required
+                                                                   aria-required="true"/>
+                                                            <span class="help-block"><small>请和你当前访问的域名保持一致，否则会出现渲染错误。</small></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label">站点标题</label>
+                                                        <div class="col-md-9">
+                                                            <input type="text" class="form-control"
+                                                                   v-model="options.site_title" placeholder="站点子标题"
+                                                                   required aria-required="true"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label">站点子标题</label>
+                                                        <div class="col-md-9">
+                                                            <input type="text" class="form-control"
+                                                                   v-model="options.site_subtitle" placeholder="站点子标题"
+                                                                   required aria-required="true"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label">站点描述</label>
+                                                        <div class="col-md-9">
+                                                            <input type="text" class="form-control"
+                                                                   v-model="options.site_description" placeholder="站点描述"
+                                                                   required aria-required="true"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label">站点关键词</label>
+                                                        <div class="col-md-9">
+                                                            <input type="text" class="form-control"
+                                                                   v-model="options.site_keywords" placeholder="站点关键词"
+                                                                   required aria-required="true"/>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="clearfix pull-right">
+                                                        <button type="button"
+                                                                class="btn btn-inverse waves-effect waves-light"
+                                                                @click="saveSetting">
+                                                            保存设置
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="panel panel-color panel-inverse">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">高级选项设置</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <form class="form-horizontal" role="form" id="advanced-form">
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label">CND地址</label>
+                                                        <div class="col-md-9">
+                                                            <input type="text" class="form-control" name="cdnURL"
+                                                                   placeholder="CDN地址"/>
+                                                            <span class="help-block"><small>该地址用于加载博客后台静态资源，不清楚请勿设置。开启公共CDN选项时此配置无效</small></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label">清理缓存</label>
+                                                        <div class="col-md-9">
+                                                            <input type="text" class="form-control" name="cacheKey"
+                                                                   placeholder="请输入缓存前缀，输入*删除所有缓存"/>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label">黑名单IP列表</label>
+                                                        <div class="col-md-9">
+                                                            <textarea rows="3" class="form-control"
+                                                                      v-model="options.site_block_ips" name="blockIps"
+                                                                      placeholder="请输入黑名单IP，如：123.123.33.23,123.123.33.24"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label">卸载插件</label>
+                                                        <div class="col-md-9">
+                                                            <input type="text" class="form-control" name="pluginName"
+                                                                   placeholder="请输入插件名，输入*卸载所有插件"/>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label">允许重新安装</label>
+                                                        <div class="col-md-9">
+                                                            <div id="allowInstall" class="toggle toggle-success"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label">评论需要审核</label>
+                                                        <div class="col-md-9">
+                                                            <div id="allowCommentAudit"
+                                                                 class="toggle toggle-success"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="col-md-3 control-label">云公共CDN资源</label>
+                                                        <div class="col-md-9">
+                                                            <div id="allowCloudCDN" class="toggle toggle-success"></div>
+                                                            <span class="help-block"><small>启用该选项后后台静态资源则使用<code>cdn.bootcss.com</code>加载</small></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <input type="hidden" name="allowInstall" v-model="allowInstall"/>
+                                                    <input type="hidden" name="allowCommentAudit"
+                                                           v-model="allowCommentAudit"/>
+                                                    <input type="hidden" name="allowCloudCDN" v-model="allowCloudCDN"/>
+
+                                                    <div class="clearfix pull-right">
+                                                        <button type="button"
+                                                                class="btn btn-inverse waves-effect waves-light"
+                                                                @click="saveAdvanced">
+                                                            保存设置
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer text-right">
+                    2017 © <a href="https://github.com/biezhi" target="_blank">Tale</a>.
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/r/plugins/jquery/3.2.1/jquery.min.js"></script>
+<script src="/r/plugins/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/r/plugins/md5/md5.min.js"></script>
+<script src="/r/plugins/dashborad/detect.js"></script>
+<script src="/r/plugins/dashborad/fastclick.js"></script>
+<script src="/r/plugins/dashborad/wow.min.js"></script>
+<script src="/r/plugins/dashborad/jquery.slimscroll.js"></script>
+<script src="/r/plugins/limonte-sweetalert2/6.4.1/sweetalert2.min.js"></script>
+<script src="/r/plugins/axios/axios.min.js"></script>
+<script src="/r/plugins/vue/vue.min.js"></script>
+<script src="/r/plugins/moment/moment.min.js"></script>
+<script src="/r/plugins/vue-loading/vue-loading.min.js"></script>
+<script src="/r/plugins/dashborad/jquery.app.js?v=v1.0"></script>
+<script src="/r/js/base.js?v=v1.0"></script>
+
+<script src="/r/plugins/jquery-toggles/2.0.4/toggles.min.js"></script>
+<script>
+    var tale = new $.tale();
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            options: {},
+            allowInstall: '',
+            allowCommentAudit: '',
+            allowCloudCDN: '',
+            isLoading: true
+        },
+        beforeCreate: function () {
+            vueLoding = this.$loading.show();
+        },
+        mounted: function () {
+            this.load();
+        },
+        methods: {
+            load: function () {
+                var $vm = this;
+                tale.get({
+                    url: '/admin/api/options',
+                    success: function (data) {
+                        $vm.options = data.payload;
+                        $vm.allowInstall = data.payload.allow_install;
+                        $vm.allowCommentAudit = data.payload.allow_comment_audit;
+                        $vm.allowCloudCDN = data.payload.allow_cloud_CDN;
+
+                        $('#allowInstall').toggles({
+                            on: $vm.allowInstall === 'true',
+                            text: {
+                                on: '开启',
+                                off: '关闭'
+                            }
+                        });
+
+                        $('#allowCommentAudit').toggles({
+                            on: $vm.allowCommentAudit === 'true',
+                            text: {
+                                on: '开启',
+                                off: '关闭'
+                            }
+                        });
+
+                        $('#allowCloudCDN').toggles({
+                            on: $vm.allowCloudCDN === 'true',
+                            text: {
+                                on: '开启',
+                                off: '关闭'
+                            }
+                        });
+
+                    },
+                    error: function (error) {
+                        console.log(error);
+                        alert(error || '数据加载失败');
+                    }
+                });
+            },
+            saveSetting: function () {
+                var $vm = this;
+                var param = tale.copy($vm.options);
+                tale.postWithForm({
+                    url: '/admin/api/options/save',
+                    data: param,
+                    success: function (result) {
+                        if (result && result.success) {
+                            tale.alertOk('设置保存成功');
+                            $vm.load();
+                        } else {
+                            tale.alertError(result.msg || '保存失败');
+                        }
+                    }
+                });
+            },
+            saveAdvanced: function () {
+                var $vm = this;
+                var param = $('#advanced-form').serialize();
+                tale.post({
+                    url: '/admin/api/advanced/save',
+                    data: param,
+                    success: function (result) {
+                        if (result && result.success) {
+                            tale.alertOk('选项保存成功');
+                            $vm.load();
+                        } else {
+                            tale.alertError(result.msg || '选项保存失败');
+                        }
+                    }
+                });
+            }
+        }
+    });
+
+    $('#allowInstall').on('toggle', function (e, active) {
+        vm.allowInstall = active;
+    });
+
+    $('#allowCommentAudit').on('toggle', function (e, active) {
+        vm.allowCommentAudit = active;
+    });
+
+    $('#allowCloudCDN').on('toggle', function (e, active) {
+        vm.allowCloudCDN = active;
+    });
+
+    $(document).ready(function () {
+        vm.isLoading = false;
+        vueLoding.hide();
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>文件管理 - Lumos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta content="biezhi" name="author"/>
+    <meta content="JDJhJDEyJFpXMTF0akp3a25zelJwVFg5TWlWRGVrZmRvTTg0UzlYMXBHaGpnQmRDcVlmRFVoS0c0QkFL" name="csrf_token"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="shortcut icon" href="/r/images/favicon.png"/>
+    <link href="/r/plugins/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/r/plugins/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/r/plugins/limonte-sweetalert2/6.4.1/sweetalert2.min.css" rel="stylesheet">
+    <link href="/r/plugins/vue-loading/vue-loading.min.css" rel="stylesheet">
+    <link href="/r/css/style.min.css?v=v1.0" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="/r/plugins/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="/r/plugins/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="fixed-left">
+<div id="wrapper">
+    <div class="topbar">
+        <div class="topbar-left">
+            <div class="text-center p-t-10" style="margin: 0 auto;">
+                <div class="pull-left" style="padding-left: 10px;">
+                    <a href="/admin/index">
+                        <img src="/r/images/unicorn.png" width="50" height="50"/>
+                    </a>
+                </div>
+                <div class="pull-left admin-title" style="padding-left: 10px;">
+                    <span style="font-size: 28px; color: #2f353f; line-height: 50px;">Lumos Blog</span>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="">
+                    <div class="pull-left">
+                        <button type="button" class="button-menu-mobile open-left">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <span class="clearfix"></span>
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right pull-right">
+                        <li class="dropdown">
+                            <a href="index.html" class="dropdown-toggle profile" data-toggle="dropdown"
+                               aria-expanded="true"><img src="https://cn.gravatar.com/avatar" alt="user-img"
+                                                         class="img-circle"> </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://127.0.0.1:9000" target="_blank"><i class="fa fa-eye"
+                                                                                       aria-hidden="true"></i> 预览站点</a>
+                                </li>
+                                <li><a href="/admin/profile"><i class="fa fa-sun-o"></i> 个人设置</a></li>
+                                <li><a href="/logout"><i class="fa fa-sign-out"></i> 注销</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left side-menu">
+        <div class="sidebar-inner slimscrollleft">
+            <div id="sidebar-menu">
+                <ul>
+                    <li>
+                        <a href="/admin/index" class="waves-effect "><i class="fa fa-dashboard"
+                                                                        aria-hidden="true"></i><span> 仪表盘 </span></a>
+                    </li>
+                    <li>
+                        <a href="/admin/article/new" class="waves-effect "><i class="fa fa-pencil-square-o"
+                                                                              aria-hidden="true"></i><span> 发布文章 </span></a>
+                    </li>
+                    <li>
+                        <a href="/admin/articles" class="waves-effect "><i class="fa fa-list"
+                                                                           aria-hidden="true"></i><span> 文章管理 </span></a>
+                    </li>
+
+                    <li>
+                        <a href="/admin/pages" class="waves-effect "><i class="fa fa-file-text"
+                                                                        aria-hidden="true"></i><span> 页面管理 </span></a>
+                    </li>
+
+                    <li class="active">
+                        <a href="/admin/attaches" class="waves-effect  active "><i class="fa fa-cloud-upload"
+                                                                                   aria-hidden="true"></i><span> 文件管理 </span></a>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0)" class="waves-effect "><i
+                                class="fa fa-cubes"></i><span> 其他管理 </span><span class="pull-right"><i
+                                class="fa fa-plus"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="/admin/comments" class="waves-effect "><i class="fa fa-comments"
+                                                                                   aria-hidden="true"></i><span> 评论管理 </span></a>
+                            </li>
+                            <li>
+                                <a href="/admin/categories" class="waves-effect "><i class="fa fa-tags"
+                                                                                     aria-hidden="true"></i><span> 分类/标签 </span></a>
+                            </li>
+                            <li>
+                                <a href="/admin/template" class="waves-effect "><i
+                                        class="fa fa-hashtag"></i><span> 编辑模板 </span></a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="/admin/themes" class="waves-effect "><i class="fa fa-diamond"
+                                                                         aria-hidden="true"></i><span> 主题设置 </span></a>
+                    </li>
+
+                    <li>
+                        <a href="/admin/setting" class="waves-effect "><i class="fa fa-gear"
+                                                                          aria-hidden="true"></i><span> 系统设置 </span></a>
+                    </li>
+
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="content-page">
+        <div class="content">
+            <div class="container">
+                <link href="/r/plugins/dropzone/4.3.0/min/dropzone.min.css" rel="stylesheet">
+                <style>
+                    #dropzone {
+                        margin-bottom: 3rem;
+                    }
+
+                    .dropzone {
+                        border: 2px dashed #0087F7;
+                        border-radius: 5px;
+                        background: white;
+                    }
+
+                    .dropzone .dz-message {
+                        font-weight: 400;
+                        max-width: 100%;
+                        overflow: hidden;
+                    }
+
+                    .dropzone .dz-message .note {
+                        font-size: 0.8em;
+                        font-weight: 200;
+                        display: block;
+                        margin-top: 1.4rem;
+                    }
+
+                    .attach-img {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 10px;
+                        box-shadow: 0px 0px 8px #333;
+                    }
+
+                    .attach-text {
+                        font-size: 12px;
+                        font-weight: 300;
+                    }
+
+                    .attach-img:hover {
+                        background-color: #f9f9f9;
+                    }
+                </style>
+                <div id="app" class="row" v-cloak>
+                    <loading :active.sync="isLoading" :can-cancel="true"></loading>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">附件管理</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12 portlets">
+                                    <!-- Your awesome content goes here -->
+                                    <div class="m-b-30">
+                                        <form action="#" class="dropzone" id="dropzone">
+                                            <div class="fallback">
+                                                <input name="file" type="file" multiple="multiple">
+                                            </div>
+                                            <div class="dz-message">
+                                                <p>将文件拖至此处或点击上传.http://127.0.0.1:9000</p>
+                                                <p>
+                                                    <span style="font-size: 16px; color: #d0d0d0;">一次最多可以上传10个文件</span>
+                                                </p>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 attach">
+                                    <div v-if="attachPage.rows.length == 0" class="row">
+                                        <div class="col-md-4 text-center">
+                                            <div class="alert alert-warning">
+                                                目前还没有一个附件呢，你可以上传试试!
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2 col-xs-6 text-center m-t-10" v-for="item in attachPage.rows">
+                                        <a :href="'/upload'+item.fkey" target="_blank">
+                                            <img v-if="item.ftype == 'image'" class="attach-img"
+                                                 :src="'/upload'+item.fkey"
+                                                 :title="item.fname"/>
+                                            <img v-if="item.ftype != 'image'" class="attach-img"
+                                                 src="/r/images/attach.png"
+                                                 :title="item.fname"/>
+                                        </a>
+                                        <div class="clearfix m-t-10">
+                                            <span class="attach-text" data-toggle="tooltip" data-placement="top"
+                                                  :data-original-title="item.fname">{{item.fname | truncate(15)}}</span>
+                                        </div>
+                                        <div class="clearfix">
+                                            <button :url="url_1(item.fkey)" type="button"
+                                                    class="btn btn-warning btn-sm waves-effect waves-light m-t-5 copy">
+                                                <i class="fa fa-copy"></i> <span>复制</span>
+                                            </button>
+                                            <button type="button"
+                                                    class="btn btn-danger btn-sm waves-effect waves-light m-t-5"
+                                                    @click="deleteAttach(item.id)">
+                                                <i class="fa fa-trash-o"></i> <span>删除</span>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <ul class="pagination m-b-5 pull-right">
+                                        <li v-if="attachPage.hasPrevPage">
+                                            <a @click="load(attachPage.prevPage)" aria-label="Previous">
+                                                <i class="fa fa-angle-left"></i>&nbsp;上一页
+                                            </a>
+                                        </li>
+
+                                        <li class="page-item" v-for="num in attachPage.navPageNums"
+                                            :class="{ active: attachPage.pageNum == num }">
+                                            <a @click="load(num)">
+                                                {{ num }}</i>
+                                            </a>
+                                        </li>
+                                        <li v-if="attachPage.hasNextPage">
+                                            <a type="button" class="page-link" @click="load(attachPage.nextPage)">
+                                                下一页&nbsp;<i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </li>
+                                        <li><span>共 {{attachPage.totalPages}} 页</span></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="footer text-right">
+                    2019 © <a href="https://github.com/Nothing-to" target="_blank">Lumos</a>.
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/r/plugins/jquery/3.2.1/jquery.min.js"></script>
+<script src="/r/plugins/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/r/plugins/md5/md5.min.js"></script>
+<script src="/r/plugins/dashborad/detect.js"></script>
+<script src="/r/plugins/dashborad/fastclick.js"></script>
+<script src="/r/plugins/dashborad/wow.min.js"></script>
+<script src="/r/plugins/dashborad/jquery.slimscroll.js"></script>
+<script src="/r/plugins/limonte-sweetalert2/6.4.1/sweetalert2.min.js"></script>
+<script src="/r/plugins/axios/axios.min.js"></script>
+<script src="/r/plugins/vue/vue.min.js"></script>
+<script src="/r/plugins/moment/moment.min.js"></script>
+<script src="/r/plugins/vue-loading/vue-loading.min.js"></script>
+<script src="/r/plugins/dashborad/jquery.app.js?v=v1.0"></script>
+<script src="/r/js/base.js?v=v1.0"></script>
+
+<script src="/r/plugins/dropzone/4.3.0/min/dropzone.min.js"></script>
+<script src="/r/plugins/clipboard.js/1.6.0/clipboard.min.js"></script>
+<script>
+    var tale = new $.tale();
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            attachPage: {
+                rows: []
+            },
+            isLoading: true
+        },
+        beforeCreate: function () {
+            vueLoding = this.$loading.show();
+        },
+        mounted: function () {
+            this.load(1);
+        },
+
+        methods: {
+            load: function (page) {
+                var $vm = this;
+                tale.get({
+                    url: '/admin/api/attaches',
+                    data: {
+                        page: page,
+                        limit: 12
+                    },
+                    success: function (data) {
+                        $vm.attachPage = data.payload
+                    },
+                    error: function (error) {
+                        console.log(error);
+                        alert(error || '数据加载失败');
+                    }
+                });
+            },
+            deleteAttach: function (id) {
+                var $vm = this;
+                tale.alertConfirm({
+                    title: '确定删除该附件吗?',
+                    then: function () {
+                        tale.post({
+                            url: '/admin/api/attach/delete/' + id,
+                            success: function (result) {
+                                if (result && result.success) {
+                                    tale.alertOk('附件删除成功');
+                                    $vm.load(1);
+                                } else {
+                                    tale.alertError(result.msg || '附件删除失败');
+                                }
+                            }
+                        });
+                    }
+                });
+            },
+            url_1: function (index) {
+                return window.location.host+"/upload"+index;
+            }
+        }
+    });
+
+    Dropzone.autoDiscover = false;
+
+    $("#dropzone").dropzone({
+        url: "/admin/api/attach/upload",
+        method: "post",
+        filesizeBase: 1024,//定义字节算法 默认1000
+        maxFiles: 10,//最大文件数量
+        maxFilesize: '20', //MB
+        fallback: function () {
+            tale.alertError('暂不支持您的浏览器上传!');
+        },
+        uploadMultiple: true,
+        dictFileTooBig: '您的文件超过' + 20 + 'MB!',
+        dictInvalidInputType: '不支持您上传的类型',
+        dictMaxFilesExceeded: '您的文件超过' + 10 + '个!',
+        headers: {
+            // 'X-CSRF-TOKEN': document.head.querySelector("[name=csrf_token]").content
+        },
+        init: function () {
+            this.on('queuecomplete', function (files) {
+                tale.alertOk('上传成功');
+                vm.load(1);
+            });
+            this.on('error', function (a, errorMessage, result) {
+                if (!result.success && result.msg) {
+                    tale.alertError(result.msg || '上传失败');
+                }
+            });
+            this.on('maxfilesreached', function () {
+                this.removeAllFiles(true);
+                tale.alertWarn('文件数量超出限制');
+            });
+        }
+    });
+
+    var clipboard = new Clipboard('button.copy', {
+        text: function (trigger) {
+            return $(trigger).attr('url');
+        }
+    });
+
+    clipboard.on('success', function (e) {
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        e.clearSelection();
+    });
+
+    $(document).ready(function () {
+        vm.isLoading = false;
+        vueLoding.hide();
+    });
+
+</script>
+</body>
+</html>
