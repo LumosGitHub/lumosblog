@@ -170,22 +170,22 @@
                                             <td>{{ item.url }}</td>
                                             <td>
                                                 <div v-if="item.status == 'approved'">
-                                                    <span v-if="item.authorId == 4"
+                                                    <span v-if="item.authorId == 1"
                                                           class="label label-success">后台回复</span>
                                                     <span v-if="item.status == 'approved'" class="label label-success">审核通过</span>
                                                 </div>
                                                 <div v-show="item.status == 'no_audit'">
-                                                    <span v-if="item.authorId == 4"
+                                                    <span v-if="item.authorId == 1"
                                                           class="label label-default">后台回复</span>
                                                     <span v-if="item.status == 'no_audit'" class="label label-default">未审核</span>
                                                 </div>
                                             </td>
                                             <td>
-                                                <button v-if="item.authorId != 4"
+                                                <button v-if="item.authorId != 1"
                                                         class="btn btn-primary btn-sm waves-effect waves-light m-b-5"
                                                         @click="reply(item.coid)"><i class="fa fa-reply"></i> 回复
                                                 </button>
-                                                <button v-if="item.status == 'no_audit' && item.authorId != 4"
+                                                <button v-if="item.status == 'no_audit' && item.authorId != 1"
                                                         class="btn btn-success btn-sm waves-effect waves-light m-b-5"
                                                         @click="audit(item.coid, 'approved')">
                                                     <i class="fa fa-check-circle"></i> 通过</span>

@@ -57,8 +57,8 @@ public class IndexController {
     @GetMapping("/admin/api/indexNewest")
     @ResponseBody
     public List[] indexNewest() {
-        List<Contents> contentsList = contentsService.getNewestContents("publish").subList(0, 5);
-        List<Comments> commentsList = commentsService.getNewestComment5();
+        List<Contents> contentsList = contentsService.getNewestContents("publish","post").subList(0, 5);
+        List<Comments> commentsList = commentsService.getNewestComment5("post");
         return new List[]{contentsList, commentsList};
     }
 

@@ -187,9 +187,14 @@ public class DefaultIndexController {
     public RestReturns article(@PathVariable Integer id) {
         articleId = id;
         Contents contents = contentsService.getContentsById(id);
+        int size = commentsService.getAllById(contents.getCid(),"approved").size();
         Content content = new Content(contents);
         content.setArrayCategories(contents.getCategories().split(","));
         content.setArrayTags(contents.getTags().split(","));
+        Integer count = contents.getHits();
+        contents.setHits(count + 1);
+        contents.setCommentsNum(size);
+        contentsService.save(contents);
         return RestReturns.ok(content);
     }
 
@@ -269,8 +274,8 @@ public class DefaultIndexController {
     @GetMapping("/api/newest")
     @ResponseBody
     public List[] newestComments() {
-        List<Comments> commentsList = commentsService.getNewestComment10("approved");
-        List<Contents> contentsList = contentsService.getNewestContents("publish");
+        List<Comments> commentsList = commentsService.getNewestComment10("approved", "post");
+        List<Contents> contentsList = contentsService.getNewestContents("publish", "post");
         commentsList.forEach(item -> {
             item.setAgent("");
             item.setCreated(0);

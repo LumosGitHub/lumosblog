@@ -21,16 +21,20 @@ public interface CommentsDao extends JpaRepository<Comments, Integer> {
 
 
 
+    List<Comments> findAllByCidAndStatus(@Param("cId") Integer cId,@Param("status") String status);
+
+
     /**
      * 查询父级评论
-     * @param cId   文章id
-     * @param parent    标识 父级评论
-     * @param status    评论状态
-     * @param pageable  分页
+     *
+     * @param cId      文章id
+     * @param parent   标识 父级评论
+     * @param status   评论状态
+     * @param pageable 分页
      * @return
      */
     @Query("select c from Comments c where c.cid=:cId and c.parent=:parent and c.status=:status")
-    Page<Comments> selectAllByCidAndParent(@Param("cId") Integer cId, @Param("parent") Integer parent, @Param("status") String status,Pageable pageable);
+    Page<Comments> selectAllByCidAndParent(@Param("cId") Integer cId, @Param("parent") Integer parent, @Param("status") String status, Pageable pageable);
 
 
     /**
@@ -38,35 +42,40 @@ public interface CommentsDao extends JpaRepository<Comments, Integer> {
      *
      * @param cId        文章id
      * @param coIdParent 父级评论id
-     *@param status    评论状态
+     * @param status     评论状态
      * @return
      */
     @Query("select c from Comments c where c.cid=:cId and c.parent=:coIdParent and c.status=:status")
-    List<Comments> selectAllByCidAndCoIdAndParent(@Param("cId") Integer cId, @Param("coIdParent") Integer coIdParent,@Param("status") String status);
+    List<Comments> selectAllByCidAndCoIdAndParent(@Param("cId") Integer cId, @Param("coIdParent") Integer coIdParent, @Param("status") String status);
 
     /**
-     *  查询 后 10条记录
+     * 查询 后 10条记录
+     *
      * @param status 评论状态
+     * @param type   类型
      * @return List<Comments>
      */
-    List<Comments> findFirst10ByStatusOrderByCoidDesc(String status);
+    List<Comments> findFirst10ByStatusAndTypeOrderByCoidDesc(String status, String type);
 
 
     /**
-     *  查询 后 5条记录
+     * 查询 后 5条记录
+     *
+     * @param type 类型
      * @return List<Comments>
      */
-    List<Comments> findFirst5ByOrderByCoidDesc();
+    List<Comments> findFirst5ByTypeOrderByCoidDesc(String type);
 
     /**
      * 修改评论状态
+     *
      * @param status 状态
-     * @param id 评论id
+     * @param id     评论id
      * @return integer
      */
     @Modifying
     @Query(value = "UPDATE Comments  SET status = :status WHERE coid =:coid")
-    Integer updateStatusById(@Param("status") String status,@Param("coid") Integer id);
+    Integer updateStatusById(@Param("status") String status, @Param("coid") Integer id);
 
 
 }

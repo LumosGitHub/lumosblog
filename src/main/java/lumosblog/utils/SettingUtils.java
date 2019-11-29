@@ -27,7 +27,7 @@ public class SettingUtils {
 
 
     /**
-     * 当前运行系统
+     * 文件存储地址
      */
     public static  String UPLOAD_FILE;
 
@@ -39,7 +39,7 @@ public class SettingUtils {
     }
 
     /**
-     * 评论来源
+     * 读取配置文件
      */
     private static void readProperty() {
         Properties properties;

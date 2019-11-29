@@ -152,8 +152,6 @@
                           minlength="5"
                           maxlength="2000"></textarea>
 
-                <input type='hidden' name='_token'
-                       value='JDJhJDEyJFJFT3d6LnZFVWVKSXhMNnFWOVU2ZGUuMjZXZ2V6ZDh5UFRMTFM2eU93Wjl5WUMvLnBaUU1h'/>
                 <input type="submit" class="submit" id="misubmit" @click="subComment()" value="提交"/>
             </form>
             <iframe id="is_iframe" name="the_iframe" style="display:none;"></iframe>
@@ -164,9 +162,13 @@
                     <div :id="'comment-'+comment.coid">
                         <div class="comment-view" onclick="">
                             <div class="comment-header">
-                                <img class="avatar"
-                                     src="/r/images/author1.jpg"
-                                     title="{{comment.author}}"
+                                <img class="avatar" v-if="comment.authorId==1"
+                                     src="/r/images/author.png"
+                                     :title="comment.author"
+                                     width="80" height="80">
+                                <img class="avatar" v-if="comment.authorId==0"
+                                     src="/r/images/loading.gif"
+                                     :title="comment.author"
                                      width="80" height="80">
                                 <span class="comment-author">
                                 <a :href="comment.url" target="_blank" rel="external nofollow">{{comment.author}}</a>
@@ -191,9 +193,13 @@
                                 <div :id="'comment-'+child.coid">
                                     <div class="comment-view">
                                         <div class="comment-header">
-                                            <img class="avatar"
-                                                 src="/r/images/author1.jpg"
-                                                 title="child.author" width="80" height="80">
+                                            <img class="avatar" v-if="child.authorId==1"
+                                                 src="/r/images/author.png"
+                                                 :title="child.author" width="80" height="80">
+
+                                            <img class="avatar" v-if="child.authorId==0"
+                                                 src="/r/images/loading.gif"
+                                                 :title="child.author" width="80" height="80">
                                             <span class="comment-author comment-by-author">
                                             <a :href="child.url"
                                                target="_blank" rel="external nofollow">{{child.author}}</a>
@@ -261,7 +267,10 @@
                         <div class="info-text">
                             <p>一万年太久，只争朝夕。</p>
                             <p>Powered by <a href="https://github.com/Nothing-to/lumosblog" target="_blank"
-                                             rel="nofollow">Lumos</a>
+                                             rel="nofollow">Lumos-GitHub</a><br>
+                                <a href="https://gitee.com/guanlinsir/lumosblog" target="_blank"
+                                             rel="nofollow">-----------------Lumos-Gitee</a>
+
                             </p>
                             <p>&copy; 2019 <a href="https://github.com/Nothing-to">guanlin</a></p>
                         </div>

@@ -33,6 +33,15 @@ public class ContentsService {
 
 
     /**
+     * 根据 id 查询类型
+     * @param cid 表id
+     * @return String  “post” or ”page“
+     */
+    public String getContentsTypeByCid(Integer cid){
+        return dto.findByCid(cid).getType();
+    }
+
+    /**
      * 根据文章类型查找
      *
      * @param type 类型
@@ -160,8 +169,8 @@ public class ContentsService {
      * @param status 文章状态
      * @return 10条最新文章
      */
-    public List<Contents> getNewestContents(String status) {
-        return dto.findFirst10ByStatusOrderByCidDesc(status);
+    public List<Contents> getNewestContents(String status,String type) {
+        return dto.findFirst10ByStatusAndTypeOrderByCidDesc(status,type);
     }
 
     /**

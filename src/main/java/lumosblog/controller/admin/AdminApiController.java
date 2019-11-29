@@ -144,7 +144,7 @@ public class AdminApiController {
         contents.setType("page");
         int cid = contentsService.save(contents).getCid();
         log.info("新建页面 ID：" + cid);
-        return RestReturns.ok();
+        return RestReturns.ok(cid);
     }
 
     /**
@@ -157,6 +157,7 @@ public class AdminApiController {
     @ResponseBody
     public RestReturns updatePage(@RequestBody Contents contents) {
         contents.setType("page");
+        log.info(contents.toString());
         int cid = contentsService.save(contents).getCid();
         log.info("更新页面 ID：" + cid);
         return RestReturns.ok(cid);
@@ -259,6 +260,7 @@ public class AdminApiController {
     @ResponseBody
     public RestReturns newArticle(@RequestBody Contents contents) {
         contents.setType("post");
+        contents.setHits(1);
         int cid = contentsService.save(contents).getCid();
         log.info("保存文章 ID" + cid);
         return RestReturns.ok(cid);
@@ -440,14 +442,14 @@ public class AdminApiController {
         if (optionalAttach.isPresent()) {
             attach = optionalAttach.get();
         }
-        String filePath = LumosUtils.UP_DIR + "/static" + attach.getFkey();
+        String filePath = LumosUtils.UP_DIR + "/upload" + attach.getFkey();
         File file = new File(filePath);
         boolean result = file.delete();
         if (!result) {
             log.error("本地附件删除失败！ 附件名： " + attach.getFkey());
         }
         attachService.deleteAttach(id);
-        log.info("删除附件 ID：" + id);
+        log.info("删除附件 ID：" + id + "  Name: " + attach.getFkey());
         return RestReturns.ok();
     }
 

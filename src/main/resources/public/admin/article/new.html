@@ -51,7 +51,7 @@
                                aria-expanded="true"><img src="https://cn.gravatar.com/avatar" alt="user-img"
                                                          class="img-circle"> </a>
                             <ul class="dropdown-menu">
-                                <li><a href="http://127.0.0.1:9000" target="_blank"><i class="fa fa-eye"
+                                <li><a href="/" target="_blank"><i class="fa fa-eye"
                                                                                        aria-hidden="true"></i> 预览站点</a>
                                 </li>
                                 <li><a href="/admin/profile"><i class="fa fa-sun-o"></i> 个人设置</a></li>
@@ -216,7 +216,7 @@
                                 <h3 class="panel-title">发布文章</h3>
                             </div>
                             <div class="panel-body">
-                                <input type="hidden" id="attach_url" value="http://127.0.0.1:9000"/>
+                                <input type="hidden" id="attach_url" value="/"/>
                                 <form id="articleForm">
                                     <input type="hidden" v-model="article.cid"/>
                                     <input type="hidden" v-model="article.created"/>
@@ -233,7 +233,7 @@
                                     </div>
 
                                     <div class="form-group col-md-6" style="padding: 0 0 0 10px;">
-                                        <input class="form-control" placeholder="自定义访问路径，如：my-first-article  默认为文章id"
+                                        <input class="form-control" placeholder="自定义访问路径，如：my-first-article  默认为文章id  暂不可用！！！"
                                                v-model="article.slug"/>
                                     </div>
 

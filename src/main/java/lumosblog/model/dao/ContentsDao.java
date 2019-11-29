@@ -89,9 +89,10 @@ public interface ContentsDao extends JpaRepository<Contents, Integer> {
      * 查询 后 10条记录
      *
      * @param status 记录状态
+     * @param type 类型
      * @return 10条记录
      */
-    List<Contents> findFirst10ByStatusOrderByCidDesc(String status);
+    List<Contents> findFirst10ByStatusAndTypeOrderByCidDesc(String status,String type);
 
 
     /**
@@ -151,6 +152,7 @@ public interface ContentsDao extends JpaRepository<Contents, Integer> {
      *
      * @param tags   标签
      * @param status 状态
+     * @param type 类型
      * @return a List<Contents> {@link Contents}
      */
     public List<Contents> findAllByStatusAndTypeAndTagsLike(String status, String type, String tags);
@@ -161,6 +163,7 @@ public interface ContentsDao extends JpaRepository<Contents, Integer> {
      *
      * @param categories 分类
      * @param status     状态
+     * @param type 类型
      * @return a List<Contents> {@link Contents}
      */
     public List<Contents> findAllByStatusAndTypeAndCategoriesLike(String status, String type, String categories);

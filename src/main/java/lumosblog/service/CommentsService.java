@@ -34,6 +34,14 @@ public class CommentsService {
     }
 
     /**
+     *
+     * @param id
+     * @return
+     */
+    public List<Comments> getAllById(Integer id,String status){
+        return dto.findAllByCidAndStatus(id,status);
+    }
+    /**
      * 根据id 获取单条记录
      * @param id 评论id
      * @return a {@link Optional<Comments>}
@@ -124,17 +132,17 @@ public class CommentsService {
      * @param status 评论状态
      * @return 10条 最新评论
      */
-    public List<Comments> getNewestComment10(String status) {
-        return dto.findFirst10ByStatusOrderByCoidDesc(status);
+    public List<Comments> getNewestComment10(String status,String type) {
+        return dto.findFirst10ByStatusAndTypeOrderByCoidDesc(status,type);
     }
 
     /**
-     * 获取 5条 最新评论  无状态
+     * 获取 5条 最新评论
      *
      * @return List<Comments>
      */
-    public List<Comments> getNewestComment5() {
-        return dto.findFirst5ByOrderByCoidDesc();
+    public List<Comments> getNewestComment5(String type) {
+        return dto.findFirst5ByTypeOrderByCoidDesc(type);
     }
 
 

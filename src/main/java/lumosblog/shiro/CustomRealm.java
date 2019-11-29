@@ -57,6 +57,9 @@ public class CustomRealm extends AuthorizingRealm {
         String userPwd = new String((char[]) token.getCredentials());
 
         Users users= service.getUsersByUsername(userName);
+        if (users==null){
+            throw  new AuthenticationException("");
+        }
         log.info("登录用户信息："+userName+"      "+userPwd);
 
         return new SimpleAuthenticationInfo(token.getPrincipal(),users.getPassword(),ByteSource.Util.bytes(userName+"guanlin"),getName());
